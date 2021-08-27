@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+
+<body>
+ <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">&#8962;Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+    </svg>
+    <div class="container">
+     <h2>Conditional operators & goto statement</h2> 
+<big>Conditional operators </big>
+<p class="para">
+  The conditional operator is also known as a ternary operator. The conditional statements are the decision-making statements that depend upon the output of the expression. As a conditional operator works on three operands, so it is also known as the ternary operator.
+  
+  
+</p>
+<pre class="syntax">Syntax:
+ expression1 ? expression2 : expression3;</pre>
+
+<p class="para">The expression1 is evaluated, it is treated as a logical condition. If the result is non-zero then expression2 will be evaluated otherwise expression3 will be evaluated. The value after evaluation of expression2 or expression3 is the final result.</p>
+
+
+<b>Example:</b>
+<br>
+
+<pre class="language-c"><code>#include &lt;stdio.h>
+  int main()
+  {
+  int age; // variable declaration
+  printf("Enter your age");
+  scanf("%d",&age); // taking user input for age variable
+  (age>=18)? (printf("eligible for voting")) : (printf("not eligible for voting")); // conditional operator
+  return 0;
+  }</code></pre>
+
+<pre class="outc">output: 
+ Enter your age : 17
+ not eligible for voting</pre>
+
+
+<br> <div class="notebox">
+  <b>Note:</b><ol>
+    <li>  A conditional operator can also be used for assigning a value to the variable, </li>
+<li>  A conditional operator is a single programming statement, </li>
+ <li>
+   It is not useful for executing the statements when the statements are multiple, </li>
+<li>  The nested ternary operator is more complex and cannot be easily debugged.</li></ol>
+</div>
+
+<br> <hr><br><big>goto statement</big>
+<p class="para">The goto statement allows us to transfer control of the program to the specified statement.</p>
+<pre class="syntax">Syntax:
+  goto label;
+  ... .. ...
+  ... .. ...
+  label:
+  statement;</pre>
+
+
+<p class="para">The label is an identifier. When the goto statement is encountered, the control of the program jumps to label: and starts executing the code.</p>
+
+<b>Example:</b><br>
+<pre class="language-c"><code>// Program to calculate the sum and average of positive numbers
+// If the user enters a negative number, the sum and average are displayed.
+
+#include <stdio.h>
+
+int main() {
+
+   const int maxInput = 100;
+   int i;
+   double number, average, sum = 0.0;
+
+   for (i = 1; i <= maxInput; ++i) {
+      printf("%d. Enter a number: ", i);
+      scanf("%lf", &number);
+      
+      // go to jump if the user enters a negative number
+      if (number < 0.0) {
+         goto jump;
+      }
+      sum += number;
+   }
+
+jump:
+   average = sum / (i - 1);
+   printf("Sum = %.2f\n", sum);
+   printf("Average = %.2f", average);
+
+   return 0;
+}</code></pre>
+
+<pre class="outc">Output:
+ 1. Enter a number: 3
+ 2. Enter a number: 4.3
+ 3. Enter a number: 9.3
+ 4. Enter a number: -2.9
+ Sum = 16.60
+ Average = 5.53</pre>
+<b>Should you use goto?
+</b><br>
+<p class="para">If you think the use of goto statement simplifies your program, you can use it. That being said, goto is rarely useful and you can create any C program without using goto altogether.</p>
+
+<div class="notebox">
+  <b>Reasons to avoid goto:</b><ol>
+    
+    
+<li>The use of goto statement may lead to code that is buggy and hard to follow.</li>
+<li>Also, the goto statement allows you to do bad stuff such as jump out of the scope.</li>
+
+<li>That being said, goto can be useful sometimes. For example: to break from nested loops.</li>
+
+  </ol>
+</div>
+
+ <br><hr><br><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut8.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut10.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+
+
+  
+  
+  
+  
+  
+  </div>
+  
+<div class="footer">copyright © <span> 2020-2021 </span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js"></script>
+</body>
+
+</html>

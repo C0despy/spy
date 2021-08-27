@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--boootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="/spy/ccss.css">
+  <link rel="stylesheet" href="/spy/wave.css">
+</head>
+<style type="text/css" media="all">
+</style>
+
+<body>
+    <header>
+      <div id="menu" class="fas fa-bars"></div>
+      <nav class="pnavbar">
+        <a href="/spy/index.html">Home</a>
+        <a href="/spy/ctut2.html">Basic C</a>
+        
+        <a href="/spy/ctut4.html">Frist C Program</a>
+        <a href="/spy/ctut5.html">Operators</a>
+        <a href="/spy/ctut6.html">Format Specifiers</a>
+        <a href="/spy/ctut7.html">Decision Making</a>
+        <a href="/spy/ctut10.html">Loops Control</a>
+        <a href="/spy/ctut11.html">Function & Recursion</a>
+        <a href="/spy/ctut12.html">Pointer</a>
+        <a href="/spy/ctut13.html">Arrays</a>
+        <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+        <a href="/spy/ctut15.html">Strings In C</a>
+      </nav>
+      <div id="theme-toggler" class="fas fa-moon"></div>
+    </header>
+  <!--Hey! This is the original version
+of Simple CSS Waves-->
+  <!--Hey! This is the original version
+of Simple CSS Waves-->
+  <!--Header ends-->
+  <!--Content starts-->
+  <!--Content ends-->
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+  <div class="container mt-4">
+    <!--Waves Container-->
+    <h3>Data Types and Type Modifiers</h3> <br>
+
+  <big><b>Data-Types In C:</b></big>
+ 
+    <p class="para">Data types are declarations for variables. This determines the type and size of data associated with variables which is essential to know since different data types occupy different size of memory.</p>
+<b class="para"> Primarily there are three types of data-types in C:</b>   
+<ol>
+  <li>Primitive Data-types</li>
+  <li>Derived Data-types</li>
+  <li>User Defined Data-types</li>
+</ol>  
+ <big>1) Primitive Data-types</big> 
+  <p class="para">These data types are built-in or predefined data types and can be used directly by the user to declare variables.</p>
+ <p class="para">Example: int, char, float etc...</p> 
+  
+
+   <p class="para">Primitive data types available in C are:</p>
+  <b>1) int</b><ul type="circle">
+ <li>  This data type is used to store integers.</li>
+<li>It occupies 4 bytes (32 bits) in memory.</li>
+<li>It can store values from -2147483648 to 2147483647.
+<br>Eg. int age = 18 </li>
+ </ul> 
+ 
+   <b class="para">2) float & double
+   </b>
+   <ul type="circle">
+  <li>Used to store floating-point numbers (decimals and exponentials)</li>   
+  <li>The size of float (single precision float data type) is 4 bytes ( 32 bits ). </li>
+  <li> the size of double (double precision float data type) is 8 bytes ( 64 bits ).</li> 
+  <li>Float is used to store upto 6 decimal digits whereas double is used to store upto 15 decimal digits.<br>
+Eg. float pi = 3.14;<br>
+
+double distance = 24E8 // 24 x 108;</li>
+   </ul>
+  <b class="para">3) char</b>
+   <ul type="circle">
+     <li>This data type is used to store characters.
+It occupies 1 byte in memory.</li>
+<li>Characters in C are enclosed inside single quotes'',</li>
+<li>ASCII code is used to store characters in memory.<br>
+eg : char ch = 'a';</li>
+   </ul>
+  
+   <table class="table">
+      <thead class="thead-dark">
+        <thead>
+          <tr>
+            <th>Data Types</th>
+            <th>Meaning</th>
+            <th>Size (in bytes)</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+          <td>int</td>
+          <td> Integer </td>
+          <td>4 bytes</td>
+        </tr>
+        <tr class="dark">
+          <td>float</td>
+          <td>Floating-point</td>
+          <td>4 bytes </td>
+        </tr>
+        <tr>
+          <td>double</td>
+          <td>Double Floating-point</td>
+          <td>8 bytes</td>
+        </tr>
+        <tr class="dark">
+          <td>char</td>
+          <td> Character </td>
+          <td> 1 bytes</td>
+        </tr>
+        <tr>
+          <td>void</td>
+          <td>Empty</td>
+          <td>0 bytes</td>
+        </tr>
+      </tbody>
+    </table> <br> 
+  <big>Derived Data Types</big>
+  <p class="para">These are the data types that are derived from fundamental (or built-in) data types. For example, arrays, pointers, structure.</p>
+ <big>User-Defined Data Types</big>
+ <p class="para">
+   These are the data types that are defined by user itself. For example, typedef, union, enumeration, etc.</p>
+<!--write some of the day of my resume for the-->
+<big><b>  C Type Modifiers</b></big>
+<p class="para">Type modifiers are used to modify the fundamental data types.</p> 
+    <table class="table">
+      <thead class="thead-dark">
+        <thead>
+          <tr>
+            <th>Data Types</th>
+            <th>Size (in bytes)</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+          <td>signed int</td>
+          <td> 4 </td>
+          <td>used for integers (equivalent to int)</td>
+        </tr>
+        <tr class="dark">
+          <td>unsigned int</td>
+          <td>4</td>
+          <td>can only store positive integers </td>
+        </tr>
+        <tr>
+          <td>short</td>
+          <td>2</td>
+          <td>used for small integers (range -32768 to 32767)</td>
+        </tr>
+        <tr class="dark">
+          <td>long int</td>
+          <td>at least 4 </td>
+          <td>used for large integers (equivalent to long int)</td>
+        </tr>
+        <tr>
+          <td>long double</td>
+          <td>8</td>
+          <td>used for large floating-point numbers </td>
+        </tr>
+        <tr class="dark">
+          <td>signed char</td>
+          <td>1</td>
+          <td>used for characters (guaranteed range -127 to
+            127) </td>
+        </tr>
+        <tr>
+          <td>unsigned char</td>
+          <td>1</td>
+          <td>used for characters (range 0 to 255)</td>
+        </tr>
+      </tbody>
+    </table>
+
+<br><figure class="figure">
+  <img src="/spy/c_data_types.jpg" class="figure-img img-fluid rounded" alt="">
+  <figcaption class="figure-caption text-right">Data Types In C</figcaption>
+</figure>
+      <hr>
+      <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut2.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   <li></li>
+    <li class="page-item"><a class="page-link" href="/spy/ctut4.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+      
+      
+      <p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/contact.html">share with us</a>
+</p>
+
+
+      
+      
+      
+      
+      
+      <!--write some of the day of my resume for the-->
+  </div>
+
+  <div class="footer">Copyright ©<span>2020-2021 </span> | all rights reserved!</div>
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- custom js file link  -->
+  <script src="/spy/cjs.js"></script>
+</body>
+
+</html>

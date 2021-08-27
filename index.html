@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+
+  <!--bootstrap csss-->
+<title>Code Spy</title>
+   
+  <link rel="stylesheet" href="/spy/style.css">
+    <link rel="stylesheet" href="/spy/Dark.css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+.container {
+
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color:var(--primary-text-color);
+}
+
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+</style>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+      <div class="logo_name">Code Spy</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class='bx bx-search'></i>
+        <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+  
+      <li>
+        <a href="/spy/index.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a href="/spy/about.html">
+          <i class='bx bx-user'></i>
+          <span class="links_name">About</span>
+        </a>
+        <span class="tooltip">About</span>
+      </li>
+      <li>
+        <a href="/spy/contact.html">
+          <i class='bx bx-phone'></i>
+          <span class="links_name">Contact</span>
+        </a>
+        <span class="tooltip">Contact</span>
+      </li>
+       <li>
+         <a href="/spy/resources.html">
+           <i class='bx bx-file'></i>
+           <span class="links_name">Resources</span>
+         </a>
+         <span class="tooltip">Resources</span>
+       </li>
+
+   
+      <li>
+        <a href="#" id="theme-toggler">
+          <i class='bx bx-cog'></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <!--<img src="profile.jpg" alt="profileImg">-->
+          <div class="name_job">
+            <div class="name">Sparky</div>
+            <div class="job">Student</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+<!--home section-->
+    <section class="home-section">
+ <section id="home">
+    <div class="inner-width">
+      <div class="content">
+     <div class="container">
+         <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+       </div>
+        <div class="sm">
+          <br><br>
+        </div>
+        <div class="buttons">
+     
+               <a href="/spy/contact.html">Contact Us</a>
+               
+          <a href="https://codepen.io/MillerTime/pen/BexBbE">Tech Fun</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- home section ends -->
+ <!-- Modal HTML -->
+<!--modal end-->
+    <!-- service section starts  -->
+
+    <!-- blog section start  -->
+    <section class="blog" id="blog">
+      
+      <div class="box-container">
+        <div class="box">
+          <img src="/spy/resources.jpg" alt="">
+          <div class="content">
+            <h3 class="info"> <i class="fas fa-code"></i>coding<i class="fas fa-book"></i>resources </h3>
+            <a href="/spy/resources.html" class="title">Resources</a>
+            <p> 
+List of programming articles to Improve Your Coding Skills,
+    includes posts on tips, techniques, and shortcuts regarding programming like C, Python...</p>
+            <a href="/spy/resources.html" class="btn">read more</a>
+          </div>
+        </div>
+            
+          <div class="box">
+          <img src="/spy/contact.png" alt="">
+          <div class="content">
+            <h3 class="info"> <i class="fas fa-phone"></i>contact <i class="fas fa-user"></i>us </h3>
+            <a href="/spy/contact.html" class="title">Contact Us</a>
+            <p>If you have any doubt or suggestions regarding my posts please let me know.if I can be of assistance, please do not hesitate to contact me.</p>
+            <a href="/spy/contact.html" class="btn">Contact Us</a>
+          </div>
+        </div>
+
+    </section>
+    
+    <!-- blog section ends -->
+    <!-- footer section  -->
+    <div class="footer">Copyright© <span>2020-2021 </span> | all rights reserved!</div>
+    <!-- jquery cdn link  -->
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- custom js file link  -->
+  <script src="/spy/script.js"></script>
+  <script>
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+  
+    const textArray = ["Welcome! Smile and the day will smile with you.","start slow and strong","never stop learning.","coding is not for clevers.","no one has 100% clarity of everything.", "every one is zero in starting.","learn from your mistakes.","Good code is its own best documentation."];
+    const typingDelay = 190;
+    const erasingDelay = 80;
+    const newTextDelay = 2000; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
+  
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      }
+      else {
+        cursorSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+      }
+    }
+  
+    function erase() {
+      if (charIndex > 0) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      }
+      else {
+        cursorSpan.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
+      }
+    }
+  
+    document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+<style type="text/css" media="all">
+
+</style>
+<body>
+ <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">&#8962;Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+      
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+    </svg>
+    <div class="container">
+  <h2>Function & Recursion</h2>
+  
+<p class="para">Sometimes our program gets bigger in size, and its not possible for a programmer to track which piece of code is doing what.</p>
+<p class="para">In c, we can divide a large program into the basic building blocks known as function.</p>
+
+<p class="para">The function contains the set of programming statements enclosed by {},here <b>the function it is a block of code which perform perticular task.</b></p>
+<pre class="language-c"><code><b>/*Example & Syntax:*/</b>
+#include&lt;stdio.h>
+void  display();        <b>// Function prototype</b>
+int main(){
+int a;
+display();              <b>// Function call</b>
+return(0);
+}
+
+void display(){       <b> // Function definition</b>
+printf(“Hi I am display”);
+}</code> </pre>
+
+<big><b>Function prototype</b></big>
+<p class="para">A function must be declared globally in a c program to tell the compiler about the function name, function parameters, and return type.</p>
+
+<big><b>Function call</b></big>
+<p class="para">Function can be called from anywhere in the program. The parameter list must not differ in function calling and function declaration. We must pass the same number of functions as it is declared in the function declaration.</p>
+
+
+
+
+<big><b>Function definition</b></big><p class="para"> It contains the actual statements which are to be executed. It is the most important aspect to which the control comes when the function is called. Here, we must notice that only one value can be returned from the function.</p>
+
+<br>
+<big>Types of Functions</big>
+<p class="para">Primarily there are two types of functions in c:</p>
+<ol><li>Library functions</li>
+<li>User-defined functions</li></ol>
+
+
+<p class="para"><b>Library Functions:</b> are the functions which are declared in the C header files such as scanf(), printf(), gets(), puts(), ceil(), floor() etc.</p>
+<p class="para"><b>User-defined functions:</b> are the functions which are created by the C programmer, so that he/she can use it many times. It reduces the complexity of a big program and optimizes the code.</p>
+
+<div class="notebox"><b>Why use functions?</b><ul>
+<li>
+To avoid rewriting the same logic again and again</li>
+<li>To keep track of what we are doing in a program</li>
+<li>To test and check logic independently</li>
+</ul></div><br><br>
+<h2>Types of function calls</h2>
+<p class="para">Based on the way we pass arguments to the function, function calls are of two types.</p>
+<ol>
+<li>Call by value -> sending the values of arguments.</li>
+<li>Call by reference -> sending the address of arguments</li></ol><br>
+<h3>Call by value:</h3><br>
+<p class="para">
+Here the values of the arguments are passed to the function. Consider this example:</p>
+<pre class="syntax">int sum(int a, int b);</pre>
+<p class="para">
+The above prototype means that sum is a function which takes values a(of type int) and b(of type int) and returns a value of type int</p>
+<p class="para">
+Function definition of sum can be:</p>
+<pre class="outc">int   sum(int a, int b){
+
+int c;                  => a and b are parameters
+
+c=a+b;
+
+return c;
+
+}</pre>
+<p class="para">Now we can call sum(2,3) [here 2 and 3 are arguments]; from main to get 5 in return.
+</p><pre class="syntax">int d=sum(2,3);   => d becomes 5</pre><br>
+<b>Example</b><br>
+<pre class="language-c"><code>#include&lt;stdio.h>
+int sum();
+int main(){
+  int x,y;
+  int d;
+  d = sum(2,3);   // 2 and 3 are arguments
+  printf("the value of i is %d\n",d);
+return 0;
+}
+int sum(int a, int b){
+  int c;   //=> a and b are parameters
+  c=a+b;
+return c;
+}</code></pre>
+
+<b>Output:</b><pre class="outc">the value of i is 5</pre>
+<br><br><b>Note:</b>
+<pre class="ouc">
+  int c = sum( 3 , 4 );   =>  Assume x=3 and y=4</pre>
+<p class="para">If sum is defined as sum(int a, int b), the values 3 and 4 are copied to a and b. Now even if we change a and b, nothing happens to the variables x and y.</p>
+
+<br><hr><h3>
+Call by reference:</h3><br>
+
+<p class="para">Here the address of the variable is passed to the function as arguments.</p>
+
+<p class="para">Now since the addresses are passed to the function, the function can now modify the value of a variable in calling function using * and & operators.</p><p><b>Example:</b></p>
+<pre class="language-c"><code>void swap(int *x, int *y)
+{
+int temp;
+temp= *x;
+*x = *y;
+*y = temp;
+}</code></pre>
+<p class="para">This function is capable of swapping the values passed to it. If a=3 and b=4 before a call to swap(a,b), a=4 and b=3 after calling swap.
+</p>
+<pre class="language-c"><code>#include&lt;stdio.h>
+int swap();
+  int main(){
+  int a=3; 
+  int b=4;       // a is 3 and b is 4
+  printf("before swap value of a = %d and b = %d\n",a,b);
+  swap(&a,&b);   // now a is 4 and b is 3
+  printf("after swap value of a = %d and b = %d\n",a,b);
+return 0;  
+}
+int swap(int *x, int *y){
+  int temp;
+  temp= *x;
+  *x = *y;
+  *y = temp;
+}</code></pre>
+<b>Output:</b>
+<pre class="outc">before swap value of a = 3 and b = 4
+after swap value of a = 4 and b = 3
+</pre>
+
+<br><div class="notebox"><b>Important points</b><ol>
+ <li>Execution of a c program starts from main() function</li>
+  <li>the function can return only one value at the time</li>
+  <li>A c program can have more than one function</li>
+  <li>Every function gets called directly or indirectly from main()
+</li>
+</ol></div>
+<br><hr><br>
+
+<h2>Recursion</h2>
+<p class="para">The process of calling a function by itself is called recursion and the function which calls itself is called recursive function.</p>
+<p class="para">A function calling itself is also called a recursive function.</p>
+<p class="para"> Recursion is used to solve various mathematical problems by dividing it into smaller problems. This method of solving a problem is called Divide and Conquer.</p> 
+
+<br>
+<b>Syntax of Recursive Function</b><br><pre class="syntax">
+returntype recursive_func ([argument list])
+{
+    statements;
+    ... ... ...
+    recursive_func ([actual argument]);
+    ... ... ...
+}
+</pre>
+<br>
+<div class="notebox2">
+<b>Note: </b><br><ol>In order to prevent infinite recursive call, we need to define proper exit condition in a recursive function.</ol>
+</div>
+
+<br>
+
+
+<b>Example of Recursion:</b><br>
+<pre class="syntax">
+factorial(n) = 1 x 2 x 3...........x n
+
+factorial(n)= 1 x 2 x 3...........n-1 x n
+
+factorial(n)= factorial of (n-1) x n
+</pre><br><p class="para">Since we can write factorial of a number in terms of itself,
+we can program it using recursion.</p><br>
+<pre class="language-c"><code>// Function to calculate factorial using recursion
+#include&lt;stdio.h>
+int factorial();
+
+  int main(){
+  int a, b;
+  a = 5;
+  b = factorial(a);
+  printf("factorial of 5 is %d",b);
+return 0;
+}
+
+int factorial(int x){
+  int f;
+  if(x==0||x==1)
+  return 1;
+  else
+  f = x * factorial(x-1);
+return f;
+}</code></pre>
+
+<b>Output:</b>
+<pre class="outc">
+  factorial of 5 is 120</pre><br><big>How does it works</big>
+  <pre class="outc2">factorial(5) 
+
+5 x factorial(4)
+
+5 x 4 x factorial(3)
+
+5 x 4 x 3 x factorial(2)
+
+5 x 4 x 3 x 2 x factorial(1)
+
+5 x 4 x 3 x 2 x 1 = 120</pre>
+  <br><br><div class="notebox2">
+<b>Important Notes:</b>
+<ol>
+<li> Recursion is sometimes the most direct way to code an algorithm.</li>
+
+<li> The condition which doesn’t call the function any further in a recursive function is called the base condition.</li>
+
+<li> Sometimes, due to a mistake made by the programmer, a recursive function can keep running without returning, resulting in a memory error.</li>
+</ol></div>
+
+
+
+
+
+
+
+ <br><hr><br><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut10.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut12.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+
+  
+  
+  
+  
+  
+  </div>
+  
+<div class="footer">copyright © <span> 2020-2021 </span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js"></script>
+</body>
+
+</html>

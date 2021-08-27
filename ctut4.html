@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+
+<body>
+ <header>
+      <div id="menu" class="fas fa-bars"></div>
+      <nav class="pnavbar">
+        <a href="/spy/index.html">Home</a>
+        <a href="/spy/ctut2.html">Basic C</a>
+        <a href="/spy/ctut3.html"> Datatypes In C</a>
+        
+        <a href="/spy/ctut5.html">Operators</a>
+        <a href="/spy/ctut6.html">Format Specifiers</a>
+        <a href="/spy/ctut7.html">Decision Making</a>
+        <a href="/spy/ctut10.html">Loops Control</a>
+        <a href="/spy/ctut11.html">Function & Recursion</a>
+        <a href="/spy/ctut12.html">Pointer</a>
+        <a href="/spy/ctut13.html">Arrays</a>
+        <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+        <a href="/spy/ctut15.html">Strings In C</a>
+      </nav>
+      <div id="theme-toggler" class="fas fa-moon"></div>
+    </header>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+  <div class="container mt-4">
+<h2> Basic structure of the c program </h2>
+<br>
+<br>
+<h3><b>Our First C Program</b></h3>
+<p class="para"></p>
+<pre class="language-c"><code>// Hello world program in c
+#include &lt;stdio.h>
+
+int main()
+{
+  printf("Hello, World\n");
+  return 0;
+}</code></pre>
+<br>
+<b style="font-size: 1.3em;">Basic structure of C program</b><br><br>
+<ol>
+<b>  <li>#include&lt;stdio.h&gt;</li></b>
+  <p>#include is the pre-processor directive that is used to include files in our program. Here we are including the <b>stdio.h</b> standard file which is necessary for the declarations of basic standard input/output library in C programming.</p>
+ <b> <li>int main()</li></b><p>The execution of any C program starts with the main function, hence it is necessary to have a main function in your program. ‘int’ is the return value of this function.</p>
+<b>  <li>{}</li></b><p>The curly brackets are used to indicate the starting and ending point of any function. Every opening bracket should have a corresponding closing bracket.</p>
+<b>  <li>printf ("Hello, world\n");  </li></b><p>This is a C statement. <b>printf</b> represents the standard output stream in C. It is declared in the <b>stdio.h</b> The text between quotations will be printed on the screen. <b>\n</b> will not be printed, it is used to add line break. Each statement in C ends with a semicolon <b>(;)</b>.</p>
+<b><li>return 0;</li></b>
+<p>return signifies the end of a function. Here the function is main, so when we hit return 0, it exits the program. We are returning 0 because we mentioned the return type of main function as integer (int main). A zero indicates that everything went fine and a one indicates that something has gone wrong.</p>
+</ol>
+ 
+<br><hr>
+<h3>Input and Output in C</h3>
+
+<p class="para">The header file stdio.h must be included to make use of the input/output (printf/scanf) function.</p>
+
+<ul type="circle">
+<b>  <li>Standard Output (printf)</li></b>
+  <p class="para">By default, the standard output of a program points at the screen. So with the printf function can print a message onto the screen.</p>
+  <p>Example:</p>
+  <pre class="language-c"><code> // standard output program
+#include &lt;stdio.h>
+
+int main()
+{
+  printf("an example to print output on the screen");
+  return 0;
+}</code></pre>
+  <b><li>Standard input (scanf)</li></b>
+  <p class="para">In most of the cases the standard input device is the keyboard. With the function (scanf) it is possible to read input from the keyboard.</p>
+  <p>Example:</p>
+  <pre class="language-c"><code>// standard input program
+#include &lt;stdio.h>
+
+int main()
+{
+  char ch;
+  printf("press a character and press return: ");
+  scanf("%c",&ch);
+  printf("%c",ch);
+  return 0;
+}</code></pre>
+</ul>
+<div class="notebox">
+  <b>Note:</b>
+  <ul>
+    <li> %c format specifier inside the scanf() function to take character input from the user.</li>
+    <li>When you press a character, it is stored in the ch variable.</li>
+    <li> The input is processed by scanf after the return key is pressed.</li>
+  </ul>
+</div> <br>
+  <p class="para">The scanf function will always return the variable type that you use with scanf. So if you request an integer you will get an integer and so on. also you can take multiple inputs from the user and display them as shown as below.</p>
+  <pre class="language-C"><code>#include&lt;stdio.h>
+ 
+int main{
+  int a;
+  float b;
+  printf("Enter integer and then a float: ");
+  // Taking multiple inputs
+  scanf("%d%f", &a, &b);
+  printf("You entered %d and %f", a, b);
+  return 0;
+ }</code></pre>
+ <p class="para">program output</p>
+ <pre style="background: black; color: white;"> Enter  integer and then a float: -3
+ 3.4
+ You entered -3 and 3.400000</pre>
+ <p>In this case the user must give two input values, that are separated by any valid blank separator (tab, space or new-line).</p>
+<!--write some of the day of my resume for the-->
+  <br><hr><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut3.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut5.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/contact.html">share with us</a>
+</p>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+<div class="footer">copyright © <span>2020-2021 </span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js">
+  
+</script>
+</body>
+
+</html>

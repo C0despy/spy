@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+<style type="text/css" media="all">
+
+</style>
+<body>
+ <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+<div class="container mt-4">
+  <h2>Operators In C Programming</h2><br><br>
+<!--write some of the day of my resume for the-->
+  <big><b>• Operators In C</b></big>
+  <p class="para">Operators are symbols that perform operations on variables and values.</p> 
+  <p class="para">Operators are used for producing output by performing various types of calculations on two or more inputs.</p>
+  <ol>
+    <li>Arithmetic Operators  </li>
+    <li>Assignment Operators </li>
+    <li>Relational Operators </li>
+    <li>Logical Operators</li>
+  </ol>
+ <big>C Arithmetic Operators </big>
+ <p class="para">Arithmetic operators are used for performing mathematical operations on variables and data. like + ,   - , * ...etc.</p>
+  
+  
+     <table class="table">
+      <thead>
+        <tr>
+          <th>Operator</th>
+          <th>&nbsp;&nbsp;&nbsp;Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;+&nbsp;</span></td>
+          <td> &nbsp;&nbsp;&nbsp;Addition </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;-&nbsp;</span></td>
+          <td> &nbsp;&nbsp;&nbsp;Substraction </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;*&nbsp;</span></td>
+          <td> &nbsp;&nbsp;&nbsp;Multiplication </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;/&nbsp;</span></td>
+          <td>&nbsp;&nbsp;&nbsp; Division </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;%&nbsp;</span></td>
+          <td>&nbsp;&nbsp;&nbsp;Modulo Operation (Remainder after division) </td>
+        </tr>
+      </tbody>
+    </table>
+  <br>
+  <p class="para">Example:</p>
+  <pre class="language-C"><code>#include &lt;stdio.h>
+
+int main()
+{
+  int a = 9, b = 2;
+  
+  //the sum of a and b.
+  printf("the value of a + b is %d\n",a+b);
+  //the difference of a and b.
+  printf("the value of a - b is %d\n",a-b);
+  //the product of a and b.
+  printf("the value of a * b is %d\n",a*b);
+  //the division of a by b
+  printf("the value of a / b is %d\n",a/b);
+  //the modulo of a by b
+  printf("the value of a % b is %d\n",a%b);
+  return 0;
+}</code></pre>
+  <p class="para" >Program Output</p>
+  <pre class="outc"> the value of a + b is 11
+ the value of a - b is 7
+ the value of a * b is 18
+ the value of a / b is 4
+ the value of a % b is 1</pre>
+
+<big><span class="smbox">&nbsp;/&nbsp;</span> Division Operator</big>
+<p class="para"> Note the operation <span class="smbox"> (a / b) </span> in our program. The <span class="smbox">  /  </span> operator is the division operator.</p>
+<p class="para">As we can see from the above example, if an integer is divided by another integer, we will get the quotient. However, if either divisor or dividend is a floating-point number, we will get the result in decimals.</p>
+ <pre class="outc"> In C,
+
+  9/2 is 3
+  9.0 / 2 is 4.5
+  9 / 2.0 is 4.5
+  9.0 / 2.0 is 4.5</pre>
+<big><span class="smbox">&nbsp;%&nbsp;</span>Modulo Operator</big>
+ <p class="para">The modulo operator <span class="smbox"> % </span>  computed the remainder. When <span class="smbox"> a = 9 </span> is divided by <span class="smbox"> b = 2 </span>, the remainder is <b>1</b>.</p>
+ <div class="notebox"><b>Note</b><ul type="circle">
+   <li>The <span class="smbox"> % </span>operator can only be used with integers. </li>
+ </ul>
+ </div>
+<br><hr><br>
+ <big>C Assignment Operators </big>
+<p class="para">assignment operators are used to assign values to variables</p>
+
+  <pre class="syntax">for example:  
+    int a = 34;  // a is assigned 34.   </pre>
+
+     <table class="table">
+      <thead>
+        <tr>
+          <th>Operator&nbsp;&nbsp;</th>
+          <th> Example&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>Equivalent to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a = b;&nbsp;</span> </td>
+          <td><span class="smbox">&nbsp;a = b; &nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;+=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a += b;&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a = a + b;&nbsp;</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;-=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a -= b;&nbsp;</span> </td>
+          <td><span class="smbox">&nbsp;a = a - b;&nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;*=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a *= b&nbsp;</span> </td>
+          <td><span class="smbox">&nbsp;a = a * b;&nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;/=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a /= b;&nbsp;</span> </td>
+          <td><span class="smbox">&nbsp;a = a / b;&nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td>&nbsp;<span class="smbox">&nbsp;%=&nbsp;</span></td>
+          <td><span class="smbox">&nbsp;a %= b;&nbsp;</span> </td>
+          <td><span class="smbox">&nbsp;a = a % b;&nbsp;</span> </td>
+        </tr>
+      </tbody>
+    </table>
+<p class="para">Example</p>
+<pre class="language-c"><code>#include &lt;stdio.h>
+
+int main() {
+    int a, b;
+    a = 2;    // a is assigned 2
+    b = 7;    // b is assigned 6
+    printf("a = %d\n",a);
+    printf("b = %d\n",b);
+    // assigning the sum of a and b to a
+    a += b;  // a = a + b
+    printf("a = %d\n",a);
+
+    return 0;
+}</code></pre>
+<p class="para">Program Output</p>
+<pre class="outc"> a = 2
+ b = 7
+ a = 9
+</pre>
+
+<br><hr>
+<big>C Relational Operators</big>
+<p class="para">A relational operator is used to check the relationship between two operands.</p>
+ <pre> example:
+  // checks if a is greater than b
+  a > b;</pre>
+ <p class="para">Here, <span class="smbox">&nbsp;&gt;&nbsp;</span> is a relational operator. It checks if a is greater than b or not.</p>
+    <p class="para">If the relation is <b>true</b>, it returns <b>1</b> whereas if the relation is <b>false</b>, it returns <b>0</b>.</p>
+
+  <table class="table">
+    <thead class="dark2">
+      <tr>
+        <th>&nbsp;&nbsp;Operator</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;==&nbsp;</span></td>
+        <td>&nbsp;&nbsp;Equals operator</td>
+      </tr>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;!=&nbsp;</span></td>
+        <td>&nbsp;&nbsp;Not Equals operator</td>
+      </tr>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;&lt;&nbsp;</span></td>
+        <td>&nbsp;&nbsp; smaller than</td>
+      </tr>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;&gt;&nbsp;</span></td>
+        <td>&nbsp;&nbsp; Greater Than </td>
+      </tr>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;&lt;=&nbsp;</span></td>
+        <td> &nbsp;&nbsp;Less Than or Equal To </td>
+      </tr>
+      <tr class="dark2">
+        <td><span class="smbox">&nbsp;&gt;=&nbsp;</span></td>
+        <td>&nbsp;&nbsp; Greater Than or Equal To </td>
+      </tr>
+    </tbody>
+  </table>
+
+<br><p class="para">Example</p>
+
+<pre class="language-c"><code>#include &lt;stdio.h>
+
+int main() {
+    int a, b;
+    a = 3;
+    b = 5;
+    printf("3 > 5 is %d\n",a>b);
+    printf("3 < 5 is %d\n",a&lt;b);
+    printf("3 == 5 is %d\n",a==b);
+    printf("3 != 5 is %d\n",a!=b);
+    printf("3 >= 5 is %d\n",a>=b);
+    printf("3 <= 5 is %d\n",a<=b);
+
+    return 0;
+}</code></pre>
+
+<p class="para">Program Output</p>
+<pre class="outc"> 3 > 5 is 0
+ 3 < 5 is 1
+ 3 == 5 is 0
+ 3 != 5 is 1
+ 3 >= 5 is 0
+ 3 <= 5 is 1</pre>
+
+
+<div class="notebox"><b>Note:</b><p class="para">
+  Relational operators are used in decision making and loops. </p></div>
+<br><hr><br>
+<big>C Logical Operators</big>
+<p class="para">Logical operators are used for comparing two expressions. For example ((a==b) && (a>b)). </p>
+<p class="para">Also logical operators are used to check whether an expression is true or false. If the expression is true, it returns 1 whereas if the expression is false, it returns 0.</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th> &nbsp;&nbsp;&nbsp;Meaning</th>
+    </tr>
+  </thead>
+  <tbody class="tbody2">
+    <tr class="dark2">
+      <td>&nbsp;<span class="smbox">&nbsp;&&&nbsp;</span></td>
+      <td>Logical AND.
+        True only if all the operands are true.</td>
+    </tr>
+    <tr class="dark2">
+      <td>&nbsp;<span class="smbox">&nbsp;||&nbsp;</span></td>
+      <td>Logical OR.
+        True if at least one of the operands is true. </td>
+    </tr>
+    <tr>
+      <td>&nbsp;<span class="smbox">&nbsp;!&nbsp;</span></td>
+      <td>Logical NOT.
+        True only if the operand is false. </td>
+    </tr>
+  
+  </tbody>
+</table>
+  <br>
+  <p>Example</p><pre class="language-c"><code> // Working of logical operators
+
+#include &lt;stdio.h>
+int main()
+{
+    int a = 5, b = 5, c = 10, result;
+
+    result = (a == b) && (c > b);
+    printf("(a == b) && (c > b) is %d \n", result);
+
+    result = (a == b) && (c < b);
+    printf("(a == b) && (c < b) is %d \n", result);
+
+    result = (a == b) || (c < b);
+    printf("(a == b) || (c < b) is %d \n", result);
+
+    result = (a != b) || (c < b);
+    printf("(a != b) || (c < b) is %d \n", result);
+
+    result = !(a != b);
+    printf("!(a != b) is %d \n", result);
+
+    result = !(a == b);
+    printf("!(a == b) is %d \n", result);
+
+    return 0;
+}
+  </code></pre>
+
+<p>Program Output</p>
+
+<pre class="outc"> (a == b) && (c > b) is 1 
+ (a == b) && (c < b) is 0 
+ (a == b) || (c < b) is 1 
+ (a != b) || (c < b) is 0 
+ !(a != b) is 1 
+ !(a == b) is 0 .  </pre>
+
+<br>
+<b>Explanation of logical operator program</b>
+<ul><li>
+(a == b) && (c > 5) evaluates to 1 because both operands (a == b) and (c > b) is 1 (true).</li>
+<li>(a == b) && (c < b) evaluates to 0 because operand (c < b) is 0 (false).</li>
+<li>(a == b) || (c < b) evaluates to 1 because (a = b) is 1 (true).</li>
+<li>(a != b) || (c < b) evaluates to 0 because both operand (a != b) and (c < b) are 0 (false).</li>
+<li>!(a != b) evaluates to 1 because operand (a != b) is 0 (false). Hence, !(a != b) is 1 (true).</li>
+<li>!(a == b) evaluates to 0 because (a == b) is 1 (true). Hence, !(a == b) is 0 (false).</li>
+</ul>
+
+
+<div class="notebox"><b>Note:</b><p class="para"> 
+Logical operators are commonly used in decision making in C programming.
+</p></div>
+<br><hr><br>
+<big>Other operators in c</big>
+
+<br><br><b>The sizeof Operator</b>
+<p class="para"> 
+The sizeof is a unary operator that returns the size of data (constants, variables, array, structure, etc).
+</p>
+
+<p>Example</p>
+
+
+<pre class="language-c"><code> #include &lt;stdio.h>
+int main()
+{
+    int a;
+    float b;
+    double c;
+    char d;
+    printf("Size of int=%lu bytes\n",sizeof(a));
+    printf("Size of float=%lu bytes\n",sizeof(b));
+    printf("Size of double=%lu bytes\n",sizeof(c));
+    printf("Size of char=%lu byte\n",sizeof(d));
+
+    return 0;
+}   </code></pre>
+<p>Program Output</p>
+<pre class="outc"> Size of int = 4 bytes
+ Size of float = 4 bytes
+ Size of double = 8 bytes
+ Size of char = 1 byte</pre>
+
+
+<br><hr><br>
+
+<big>C Bitwise Operators</big><p class="para">
+During computation, mathematical operations like: addition, subtraction, multiplication, division, etc are converted to bit-level which makes processing faster and saves power.</p>
+<p class="para">
+Bitwise operators are used in C programming to perform bit-level operations.</p>
+
+<p class="para">Visit <a style="text-decoration: none"href="https://www.programiz.com/c-programming/bitwise-operators">c bitwise operators</a> to learn more</p>
+  <br><hr><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut4.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut6.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav><br><hr>
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+<div class="footer">Copyright © <span>2020-2021</span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js"></script>
+</body>
+
+</html>

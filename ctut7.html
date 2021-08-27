@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--boootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="/spy/ccss.css">
+    <link rel="stylesheet" href="/spy/prism.css">
+</head>
+<style type="text/css" media="all">
+
+</style>
+<body>
+ <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">&#8962;Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut8.html">Switch Statement</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+  </svg>
+  <div class="container">
+    <h2>Decision Making In C</h2><br>
+    <!--write some of the day of my resume for the-->
+    <p class="para">
+      Decision making is about deciding the order of execution of statements based on certain conditions or repeat a group of statements until certain specified conditions are met.
+    </p>
+    <p>C language handles decision-making by supporting the following statements,</p>
+    <ul>
+      <li>
+        if statement</li>
+      <li>
+        switch statement</li>
+      <li>
+        conditional operator statement (? : operator)</li>
+      <li>
+        goto statement</li>
+    </ul>
+    <br><hr><big>
+     if statement</big>
+     <p class="para"> The if statement may be implemented in different forms depending on the complexity of conditions to be tested.<br> The different forms are,</p>
+<ol>
+<li>Simple if statement</li>
+<li>if....else statement</li>
+<li>Nested if....else statement</li>
+<li>Using else if statement</li>
+      
+</ol>
+<br><br>
+<big>Simple if statement</big>
+
+<p class="para">
+ Block of statement executed only when a specified condition is met. 
+</p>
+<p>The syntax of the if statement looks like:</p>
+<pre class="syntax"><b> if(condition){
+ // statement to be executed
+  }</b></pre>
+<p>Example 0.1</p>
+<pre class="language-c"><code>//simple c program comparison between a and b
+#include&lt;stdio.h>
+
+int main(){
+    int a,b;
+    a = 8, b = 4;
+    if(a>b){
+        printf("a is greater than b");
+    }
+    return 0;
+}  
+</code></pre>
+
+<pre class="outc"> Output:
+ a is greater than b
+</pre>
+<p class="para">
+If the expression returns true, then the if statement will get executed, otherwise if statement is skipped and only the statement-outside of the if statement will get executed.  
+  
+</p>
+<br><hr><br>
+<big>
+ if....else statement
+</big>
+<p class="para">When we want to execute some block of code if a condition is met and another block of code if a condition does not met, In such a case we use if….else statement.</p>
+<pre class="syntax"><b>Syntax:
+   if(expression)
+   {
+      statement block1;
+   }
+   else
+   {
+      statement block2;
+   }</b></pre>
+<p>Example 0.2</p>
+<pre class="language-c"><code>
+ //check number is even or odd
+#include&lt;stdio.h>
+
+int main(){
+    int num;
+    printf("Enter a number : ");
+    scanf("%d",&num);
+    if(num%2==0){
+        printf("%d is even",num);
+    }
+    else{
+      printf("%d is odd",num);
+    }
+    return 0;
+} 
+</code></pre>
+<pre class="outc">output:
+ Enter a number : 45
+ 45 is odd</pre>
+
+
+<p class="para">
+ If the expression is met, the statement-block1 is executed, else statement-block1 is skipped and statement-block2 is executed. 
+</p>
+<br><hr><br>
+<big>Nested if....else statement</big>
+
+<p class="para">When there is an if statement inside another if statement then it is known as nested if else.  </p>
+
+<pre class="syntax"><b> Syntax:
+  
+if(expression)
+{
+  Statement 1;
+}
+else
+{
+  if(expression)
+  {
+    Statement 2;
+  }
+  else
+  {
+    Statement 3;
+  }
+}</b>
+</pre>
+
+
+<p>Example</p>
+<pre class="language-c"><code>//program to compare the two number
+#include&lt;stdio.h>
+
+int main(){
+  int a, b;
+  printf("Enter the value of a\n");
+  scanf("%d",&a);
+  printf("Enter the value of b\n");
+  scanf("%d",&b);
+ 
+  // outer if statement
+  if ( a != b ) {
+    // inner if statement
+       if ( a > b ) {
+         printf("a is greater than b") ;
+          }
+    // inner else statement
+       else {
+        printf ("b is greater than a");
+         }
+ } 
+ //outer else statement
+ else {
+    printf("both values are equal");
+ }
+ return 0 ;
+}</code></pre>
+
+<pre class="outc"> output:
+ Enter the value of a
+ 55
+ Enter the value of b
+ 55
+ both values are equal</pre><br><p class="para">Here the nested if else statement are used to specify conditions within conditions.</p>
+<div class="notebox"><b>Note:</b><ol><p>As you can see, nested if...else makes your logic complicated. If possible, you should always try to avoid nested if...else.</p></ol></div>
+<br><hr><br>
+
+
+<big>Using else if statement</big>
+
+<p class="para">The if….elseif…else statement is used to select one of among several blocks of code to be executed.</p>
+
+<pre class="syntax">Syntax:
+if(expression1)
+{
+Statement 1;
+}
+else if(expression2)
+{
+Statement 2;
+}
+.
+.
+else
+{
+Statement n;
+}</pre>
+<br><p class="para">The expression is tested from the top(of the ladder) downwards. As soon as a true condition is found, the statement associated with it is executed.</p>
+<br>
+
+<p>Example</p>
+<pre class="language-c"><code>
+#include &lt;stdio.h>
+
+void main( )
+{
+    int a;
+    printf("Enter a number...");
+    scanf("%d", &a);
+    if(a%5 == 0 && a%8 == 0)
+    {
+        printf("Divisible by both 5 and 8");
+    }  
+    else if(a%8 == 0)
+    {
+        printf("Divisible by 8");
+    }
+    else if(a%5 == 0)
+    {
+        printf("Divisible by 5");
+    }
+    else 
+    {
+        printf("Divisible by none");
+    }
+}</code></pre>
+
+<pre class="outc">output:
+ Enter a number...24
+ Divisible by 8</pre>
+ <br>  
+ 
+
+  <br><hr>
+
+  <div class="card-body-body">
+    <div class="d-flex align-items-center text-hover-success">
+      <div class="avatar w-56 m-2 no-shadow gd-success"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg> </div>
+      <div class="px-4 flex">
+        <div class="text-primary">Switch statement and </div>
+        <div class="text-success mt-2">conditional operators</div>
+      </div> <a href="/spy/ctut8.html" class="text-muted" data-abc="true"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg> </a>
+    </div>
+  </div>
+ </a><br><br><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut6.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut8.html">Next <span aria-hidden="true">&raquo;</a></span></li>
+  </ul>
+</nav>
+
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+
+  </div>
+  <div class="footer">created by <span> mr. web designer </span> | all rights reserved!</div>
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- custom js file link  -->
+  <script src="/spy/cjs.js"></script>
+   <script src="/spy/prism.js"></script>
+</body>
+
+</html>

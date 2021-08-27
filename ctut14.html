@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+
+<body>
+  <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">&#8962;Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+    </svg>
+    <div class="container">
+  
+  
+<h2>C Multidimensional Arrays</h2><p class="para"><b>
+
+In C programming, you can create an array of arrays. These arrays are known as multidimensional arrays. For example,</b></p>
+<pre class="syntax">
+float x[3][4];</pre><p class="para">
+Here, <span class="smbox">&nbsp;x&nbsp;</span>  is a two-dimensional (2d) array. The array can hold 12 elements. You can think the array as a table with 3 rows and each row has 4 columns.</p>
+<figure class="figure">
+  <img src="/spy/2darray.png" class="figure-img img-fluid rounded" alt="">
+  <figcaption class=""></figcaption>
+</figure><br>
+<p class="para">
+Similarly, you can declare a three-dimensional (3d) array. For example,</p>
+<pre class="syntax">
+float x[2][4][3];</pre><p class="para">
+Here, the array y can hold 24 elements.
+</p>
+<br><big><b>Initialization of a 2d array</b></big><pre class="syntax">
+// Different ways to initialize two-dimensional array
+
+int x[2][3] = {{1, 3, 0}, {-1, 5, 9}};
+         
+int x[][3] = {{1, 3, 0}, {-1, 5, 9}};
+                
+int x[2][3] = {1, 3, 0, -1, 5, 9};</pre>
+<br><big><b>Initialization of a 3d array</b></big>
+<p class="para">
+ initialization of three-dimensional array in a similar way like a two-dimensional array. Here's an example,</p>
+<pre class="syntax">
+int test[2][3][4] = {
+    {{3, 4, 2, 3}, {0, -3, 9, 11}, {23, 12, 23, 2}},
+    {{13, 4, 56, 3}, {5, 9, 3, 5}, {3, 1, 4, 9}}};</pre>
+    <br><br>
+    <b>Example 1:Two-dimensional array to store and print values</b>
+    
+<pre class="language-c"><code>// C program to store temperature of two cities of a week and display it.
+#include &lt;stdio.h>
+const int CITY = 2;
+const int WEEK = 7;
+int main()
+{
+  int temperature[CITY][WEEK];
+printf("taking values\n\n");
+  // Using nested loop to store values in a 2d array
+  for (int i = 0; i < CITY; ++i)
+  {
+    for (int j = 0; j < WEEK; ++j)
+    {
+      printf("City %d, Day %d: ", i + 1, j + 1);
+      scanf("%d", &temperature[i][j]);
+    }
+  }
+  printf("\nDisplaying values: \n\n");
+
+  // Using nested loop to display vlues of a 2d array
+  for (int i = 0; i < CITY; ++i)
+  {
+    for (int j = 0; j < WEEK; ++j)
+    {
+      printf("City %d, Day %d = %d°c\n", i + 1, j + 1, temperature[i][j]);
+    }
+  }
+  return 0;
+}
+</code></pre>
+<b>Output:</b><pre class="outc">
+taking values
+City 1, Day 1: 34
+City 1, Day 2: 31
+City 1, Day 3: 32
+City 1, Day 4: 33
+City 1, Day 5: 35
+City 1, Day 6: 37
+City 1, Day 7: 36
+City 2, Day 1: 23
+City 2, Day 2: 24
+City 2, Day 3: 25
+City 2, Day 4: 30
+City 2, Day 5: 29
+City 2, Day 6: 22
+City 2, Day 7: 36
+
+Displaying values: 
+
+City 1, Day 1 = 34°c
+City 1, Day 2 = 31°c
+City 1, Day 3 = 32°c
+City 1, Day 4 = 33°c
+City 1, Day 5 = 35°c
+City 1, Day 6 = 37°c
+City 1, Day 7 = 36°c
+City 2, Day 1 = 23°c
+City 2, Day 2 = 24°c
+City 2, Day 3 = 25°c
+City 2, Day 4 = 30°c
+City 2, Day 5 = 29°c
+City 2, Day 6 = 22°c
+City 2, Day 7 = 36°c
+</pre><br><hr>
+<br><b>Example 2:Three-dimensional array</b>
+<pre class="language-c"><code>// C Program to store and print 12 values entered by the user
+
+#include &lt;stdio.h>
+int main()
+{
+  int num[2][3][2];
+
+  printf("Enter 12 values: \n");
+
+  for (int i = 0; i < 2; ++i)
+  {
+    for (int j = 0; j < 3; ++j)
+    {
+      for (int k = 0; k < 2; ++k)
+      {
+        scanf("%d", &num[i][j][k]);
+      }
+    }
+  }
+
+  // Printing values with proper spy/index.
+
+  printf("\nDisplaying values:\n");
+  for (int i = 0; i < 2; ++i)
+  {
+    for (int j = 0; j < 3; ++j)
+    {
+      for (int k = 0; k < 2; ++k)
+      {
+        printf("spy/index[%d][%d][%d] = %d\n", i, j, k, num[i][j][k]);
+      }
+    }
+  }
+
+  return 0;
+}</code></pre>
+
+<b>Output</b><br>
+<pre class="outc">Enter 12 values: 
+23
+23
+34
+35
+23
+56
+22
+56
+12
+34
+56
+44
+
+Displaying values:
+spy/index[0][0][0] = 23
+spy/index[0][0][1] = 23
+spy/index[0][1][0] = 34
+spy/index[0][1][1] = 35
+spy/index[0][2][0] = 23
+spy/index[0][2][1] = 56
+spy/index[1][0][0] = 22
+spy/index[1][0][1] = 56
+spy/index[1][1][0] = 12
+spy/index[1][1][1] = 34
+spy/index[1][2][0] = 56
+spy/index[1][2][1] = 44
+</pre>
+
+<br><br><div class="notebox2"><b>Note:</b><ol><li> An array holds elements that have the same data type.</li>
+
+<li> Array elements are stored in subsequent memory locations.</li>
+
+<li>Two-dimensional array elements are stored row by row in subsequent memory locations.</li>
+
+<li>Array name represents the address of the starting element.</li>
+
+<li>Array size should be mentioned in the declaration. Array size must be a constant expression and not a variable.</li></ol>
+</div>
+ <br><hr><br><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut13.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut15.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+<br><hr>
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+  </div>
+  
+<div class="footer">copyright © <span> 2020-2021 </span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js"></script>
+</body>
+
+</html>

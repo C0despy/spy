@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--boootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="/spy/ccss.css">
+  <link rel="stylesheet" href="/spy/prism.css">
+</head>
+
+<body>
+  <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+     
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+  </svg>
+  <div class="container">
+    <h2>Loops control in c</h2>
+    <p class="para">Loops in programming come into use when we need to repeatedly execute a block of statements.<br> For example: Suppose we want to print “first hundred n natural number”.</p>
+    <p class="para">Depending upon the position of a control statement in a program, looping statement in C is classified into two types:</p>
+    <ol>
+      <li>Entry controlled loop</li>
+      <li>Exit controlled loop</li>
+    </ol>
+    <p class="para">
+      In an <b>entry control loop </b>in C, a condition is checked before executing the body of a loop. It is also called as a pre-checking loop.</p>
+    <p class="para">In an <b>exit controlled loop</b>, a condition is checked after executing the body of a loop. It is also called as a post-checking loop.</p>
+    <big>Loops Constructs</big>
+    <p class="para">'C' programming language provides us with three types of loop constructs:</p>
+    <ol>
+      <li>The while loop</li>
+      <li>The do-while loop</li>
+      <li>The for loop</li>
+    </ol>
+    <br>
+    <hr><big>1] while loop</big>
+    <P class="para">A while loop is the most straightforward looping structure. While loop syntax in C programming language is as follows:</P>
+    <pre class="syntax"> Syntax:
+  while (condition) {
+       statements;
+  }</pre>
+    <br>
+    <p class="para">&rarr;It is an entry-controlled loop. </p>
+    <p class="para">&rarr;In while loop, a condition is evaluated before processing a body of the loop.</p>
+    <p class="para">&rarr;If a condition is true then and only then the body of a loop is executed.</p>
+    <p class="para"> &rarr;After the body of a loop is executed then control again goes back at the beginning,</p>
+    <p class="para">&rarr;and the condition is checked if it is true, the same process is executed until the condition becomes false.</p>
+    <p class="para">&rarr;Once the condition becomes false, the control goes out of the loop.</p><br>
+    <b>Example:</b><br>
+    <pre class="language-c"><code>//printing 1st 10 natural number
+#include &lt;stdio.h>
+ 
+int main()
+{
+  int i=0;
+ 
+  while(i&lt;=10)
+  {
+     printf("%d\n",i);
+     i++;
+  }    
+ return 0;
+}</code></pre>
+    <br><b>Output</b><br>
+    <pre class="outc">0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre>
+    <div class="notebox"><b>Note:</b>
+      <ol>
+        <li>The while loop is execute only when the condition is met.</li>
+        <li>i++ is an increment operator that means i increased by 1.</li>
+        <li>If the condition never becomes false, the while loop keeps getting executed. Such a loop is known as an infinite loop.</li>
+      </ol>
+    </div>
+    <br>
+    <hr><big>2] do-while loop</big>
+    <p class="para">A do...while loop in C is similar to the while loop except that the condition is always executed after the body of a loop. It is also called an exit-controlled loop.</p>
+    <pre class="syntax">Syntax: 
+  do {
+     //statements;
+  } while (expression);
+ </pre>
+    <p class="para">In the do-while loop, the body of a loop is always executed at least once.</p>
+    <p class="para"> After the body is executed, then it checks the condition.</p>
+    <p class="para">If the condition is true, then it will again execute the body of a loop otherwise control is transferred out of the loop.</p>
+    <p class="para">The critical difference between the while and do-while loop is:</p>
+    <p class="para"> &rarr;In while loop the while is written at the beginning.</p>
+    <p class="para"> &rarr;In do-while loop, the while condition is written at the end and terminates with a semi-colon (;)</p>
+    <b>Example</b><br>
+    <pre class="language-c"><code>//printing 1st five even natural number
+#include&lt;stdio.h>
+
+int main(){
+	int i=1;
+	do{
+	if(i%2==0){
+		printf("%d\n",i);
+		}
+	i++;		
+	 }while(i<=10);
+	return 0;
+}</code></pre>
+    <br><b>Output</b><br>
+    <pre class="outc">
+2
+4
+6
+8
+10
+</pre>
+    <br>
+    <div class="notebox"><b>Remember:</b><br>
+      <ol>
+        <li>&nbsp;while &rarr; checks the condition & then executes the code</li>
+        <li>do-while &rarr; executes the code & then checks the condition</li>
+        <li>do-while&nbsp;&rarr; is&nbsp;a while&nbsp;loop which is execute at least once even condition is false.</li>
+      </ol>
+    </div>
+    <br>
+    <hr><big>3] for loop</big>
+    <p class="para">A for loop is a more efficient loop structure in 'C' programming. <br>The general structure of for loop syntax in C is as follows:</p>
+    <pre class="syntax">Syntax:
+ for(initial value; condition; increment or decrement)
+ {
+ //statements;
+ }</pre>
+    <p class="para">
+      Initial value &Rarr; setting a lop counter to an initial value</p>
+    <p class="para">Condition &Rarr; checking a condition</p>
+    <p class="para">Increment or decrement &Rarr; updating the loop counter</p>
+    <b>Example:</b>
+    <pre class="language-c"><code>#include&lt;stdio.h>
+
+int main(){
+  int i;
+  for(i=0;i&lt;3;i++)
+  {
+  printf(“%d”,i);
+  printf(“\n”);
+  }
+return 0;
+}
+</code></pre>
+    <b>Output:</b><br>
+    <pre class="outc">0
+1
+2
+3</pre>
+    <br>
+    <hr>
+    <big><b>Break Statement in C</b></big>
+    <p class="para">The break statement is used mainly in in the switch statement.</p>
+    <p class="para">The break statement is used to exit the loop irrespective of whether the condition is true or false.<p class="para"> Whenever a “break” is encountered inside the loop, the controls are sent outside the loop.</p>
+    </p>
+    <p class="para">We consider the following program which introduces a break to exit a while loop:</p>
+    <pre class="language-c"><code>#include &lt;stdio.h>
+
+int main() {
+int num = 5;
+while (num > 0) {
+  if (num == 3)
+    break;
+  printf("%d\n", num);
+  num--;
+}
+return 0;
+}</code></pre>
+    <b>Output:</b>
+    <pre class="outc">
+5
+4
+</pre>
+    <br>
+    <hr>
+    <big><b>Continue Statement in C</b></big>
+    <p class="para">When you want to skip to the next iteration but remain in the loop, you should use the continue statement.</p>
+    <p class="para">The continue statement in c is used to immediately move to the next of the loop.</p>
+    <p class="para"> The control is taken to the next iteration, thus skipping everything below continue inside the loop for that iteration.</p>
+    <b>For example:</b><br>
+    <pre class="language-c"><code>#include &lt;stdio.h>
+
+int main() {
+int i = 7;
+while (i > 0) {
+  i--;
+  if (i == 5)
+    continue;
+ printf("%d\n", i);
+}
+return 0;
+}</code></pre>
+    <b>Output:</b>
+    <pre class="outc">
+6
+4
+3
+2
+1</pre>
+    <p class="para">
+      So, the value 5 is skipped.</p>
+    <br>
+    <div class="notebox">
+      <b>Note:</b>
+      <ul>
+        <li><span class="smbx">break</span>&nbsp;statement completely exit the loop.</li>
+        <li><span class="smbo">continue </span>statement Skip's the particular iterationof the loop.</li>
+      </ul>
+    </div>
+    <br>
+    <hr><br>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item "><a class="page-link" href="/spy/ctut9.html"><span aria-hidden="true">&laquo;</span> Previous</a></li>
+        <li class="page-item"><a class="page-link" href="/spy/ctut11.html">Next <span aria-hidden="true">&raquo;</span></a></li>
+      </ul>
+    </nav>
+   
+    <p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+    </p>
+  </div>
+  <div class="footer">copyright © <span> 2020-2021 </span> | all rights reserved!</div>
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- custom js file link  -->
+  <script src="/spy/cjs.js"></script>
+  <script src="/spy/prism.js"></script>
+</body>
+
+</html>

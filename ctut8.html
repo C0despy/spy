@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Spy</title>
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--boootstrap css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/spy/ccss.css">
+        <link rel="stylesheet" href="/spy/prism.css">
+</head>
+
+<body>
+   <header>
+     <div id="menu" class="fas fa-bars"></div>
+     <nav class="pnavbar">
+       <a href="/spy/index.html">Home</a>
+       <a href="/spy/ctut2.html">Basic C</a>
+       <a href="/spy/ctut3.html"> Datatypes In C</a>
+       <a href="/spy/ctut4.html">Frist C Program</a>
+       <a href="/spy/ctut5.html">Operators</a>
+       <a href="/spy/ctut6.html">Format Specifiers</a>
+       <a href="/spy/ctut7.html">Decision Making</a>
+       <a href="/spy/ctut10.html">Loops Control</a>
+       <a href="/spy/ctut11.html">Function & Recursion</a>
+       <a href="/spy/ctut12.html">Pointer</a>
+       <a href="/spy/ctut13.html">Arrays</a>
+       <a href="/spy/ctut14.html">Multidimensional Arrays</a>
+       <a href="/spy/ctut15.html">Strings In C</a>
+     </nav>
+     <div id="theme-toggler" class="fas fa-moon"></div>
+   </header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#0099ff" fill-opacity="0.5" d="M0,256L30,224C60,192,120,128,180,117.3C240,107,300,149,360,181.3C420,213,480,235,540,240C600,245,660,235,720,202.7C780,171,840,117,900,85.3C960,53,1020,43,1080,64C1140,85,1200,139,1260,165.3C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+    </svg>
+    <div class="container">
+      
+      <!--write some of the day of my resume for the-->
+  <h2>switch statement in c</h2>
+  <p class="para">The switch statement in C is an alternate to if-else-if ladder statement which allows us to execute multiple operations for the different possibles values of a single variable called switch variable. </p><p class="para">
+The switch statement allows us to execute one code block among many alternatives.
+</p>
+
+<pre class="syntax">Syntax:
+ switch(expression){    
+case 1:    
+ //code to be executed;    
+ break;  //optional  
+case 2:    
+ //code to be executed;    
+ break;  //optional  
+.
+.
+.
+default:     
+// code to be executed if all cases are not matched;    
+}    
+</pre><br>
+<p class="para"><i>The break statement in switch case is not must. It is optional. If there is no break statement found in the case, all the cases will be executed present after the matched case. It is known as fall through the state of C switch statement.</i></p>
+
+  <p>Example</p>
+  
+  <pre class="language-c"><code>#include &lt;stdio.h>
+
+int main() {
+  int rating;
+  printf("Enter Your Rating From 1 To 5: ");
+  scanf("%d",&rating);
+  switch (rating)
+  {
+  case 1: 
+    printf("Your Rating Is One,");
+     break;
+  case 2: 
+    printf("Your Rating Is Two,"); 
+     break;
+  case 3: 
+    printf("Your Rating Is Three");
+     break;
+  case 4: 
+    printf("Your Rating Is Four");
+      break;
+  case 5: 
+    printf("Your Rating Is Five"); 
+     break;
+  default: 
+    printf("Oops, Invalid Rating !"); 
+    break;
+  }
+  printf("\nThank you!!!");
+}</code></pre>
+  
+  <pre class="outc">Output:
+  Enter Your Rating From 1 To 5: 2
+  Your Rating Is Two,
+  Thank you!!!</pre>
+  
+  <br><div class="notebox"><b>Note:</b><ol>
+   <li>The switch expression must be of an integer or character type.</li>
+
+
+<li> The case value must be an integer or character constant.</li>
+
+<li> The case value can be used only inside the switch statement.</li><li>By the way, the default clause inside the switch statement is optional.</li>
+  </ol></div>
+  
+  
+  <br><hr> 
+
+  <div class="card-body-body">
+    <div class="d-flex align-items-center text-hover-success">
+      <div class="avatar w-56 m-2 no-shadow gd-success"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg> </div>
+      <div class="px-4 flex">
+        <div class="text-primary">conditional operators and </div>
+        <div class="text-success mt-2">goto statement</div>
+      </div> <a href="/spy/ctut9.html" class="text-muted" data-abc="true"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg> 
+    </div>
+  </div>
+ </a><br><br><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item "><a class="page-link" href="/spy/ctut7.html"><span aria-hidden="true">&laquo;</span>  Previous</a></li>
+   
+    <li class="page-item"><a class="page-link" href="/spy/ctut9.html">Next  <span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+
+<p>If you any have doubt,suggestion regarding this post or website then feel free to <a style="text-decoration: none" href="/spy/contact.html">share with us</a>
+</p>
+
+  
+  
+  
+  
+  
+  </div>
+  
+<div class="footer">copyright © <span> 2020-2021 </span> | all rights reserved!</div>
+  
+  <!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="/spy/cjs.js"></script>
+<script src="/spy/prism.js"></script>
+</body>
+
+</html>
